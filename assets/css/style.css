@@ -1,0 +1,33 @@
+/* GLOBAL */
+
+h2 { margin-bottom: 2rem; }
+
+
+/* BOOTSTRAP CLASSES */
+.container-fluid {
+    padding: 0;
+}
+
+hr {
+    border-color: rgb(175, 171, 171);
+}
+
+
+/* SCORING */
+
+.record-box {
+    border: outset 6px gray;
+    border-radius: 5px;
+    width: 35%;
+    margin: 0 auto;
+    background-color: aliceblue;
+}
+
+.record-block {
+    display: inline-block;
+    margin: 1rem 2rem;
+}
+
+.user-score {
+    margin-top: 2rem;
+}
