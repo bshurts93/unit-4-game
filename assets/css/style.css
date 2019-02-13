@@ -31,3 +31,15 @@ hr {
 .user-score {
     margin-top: 2rem;
 }
+
+/* IMAGES */
+img {
+    height: 150px;
+}
+
+.red,
+.green {
+    display: inline-block;
+    padding: 0 3rem;
+}
+
