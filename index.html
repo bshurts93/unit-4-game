@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="jumbotron instructions-jumbo">
-                    <h2 class="text-center">Instructions</h2>
+                    <h2 class="text-center heading">Instructions</h2>
                     <hr width="20%">
                     <p class="instructions-p">You will be given a random number at the beginning of the game.</p>
                     <p class="instructions-p">There are four crystals below, each with a hidden value.</p>
@@ -36,12 +36,16 @@
             <div class="col-md-8">
                 <div class="jumbotron text-center">
                     <div class="number-box">
-                        <h2>Number to hit: <span id="target-score">30</span></h2>
+                        <h2 class="heading">Number to hit: <span id="target-score">30</span></h2>
                     </div>
 
                     <div class="record-box">
-                        <h3 class="record-block">Wins: <span id="wins">0</span></h3>
-                        <h3 class="record-block">Losses: <span id="losses">0</span></h3>
+                        <h2 class="record-block">Wins: <span id="wins">0</span></h2>
+                        <h2 class="record-block">Losses: <span id="losses">0</span></h2>
+                    </div>
+
+                    <div class="message-box">
+                        <h2 class="message"></h2>
                     </div>
 
                     <div class="score-box">
@@ -49,8 +53,8 @@
                     </div>
 
                     <div class="crystal-box">
-                        <button class="crystal" id="btn-red"><img src="assets/images/gem-red.png" alt="red crystal"></button>
-                        <button class="crystal" id="btn-green"><img src="assets/images/gem-green.png" alt="green crystal"></button>
+                        <img src="assets/images/gem-red.png" alt="red crystal" id="btn-red" class="crystal">
+                        <img src="assets/images/gem-green.png" alt="green crystal" id="btn-green" class="crystal">
                     </div>
                 </div>
             </div>
