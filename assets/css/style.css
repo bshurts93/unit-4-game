@@ -29,7 +29,12 @@ hr {
 }
 
 .user-score {
-    margin-top: 2rem;
+    border: outset 6px gray;
+    border-radius: 5px;
+    width: 35%;
+    margin: 2rem auto;
+    padding: .8rem;
+    background-color: aliceblue;
 }
 
 /* IMAGES */
@@ -37,8 +42,7 @@ img {
     height: 150px;
 }
 
-.red,
-.green {
+.crystal {
     display: inline-block;
     padding: 0 3rem;
 }
