@@ -9,6 +9,7 @@ var wins = 0;
 var losses = 0;
 var redVal;
 var greenVal;
+var blueVal;
 
 
 // DOM selectors
@@ -22,70 +23,94 @@ var messageText = $(".message");
 // ------------------------- //
 // FUNCTION DECLARATIONS
 // ------------------------- //
-function randNumScore() {
-    return Math.floor(Math.random() * 15 + 16); // Gets a random number between 14 and 30
-}
-function randNumCrystal() {
-    var random = Math.floor(Math.random() * 5 + 2); // Gets a random number between 2 and 6
-    return random;
+
+function genEggVals() {
+    firstVal = Math.floor(Math.random() * 5 + 2);
+    secondVal = Math.floor(Math.random() * 5 + 2);
+    thirdVal = Math.floor(Math.random() * 5 + 2);
+    fourthVal = Math.floor(Math.random() * 5 + 2);
 }
 
-function winOrLoss(result) {
-    if (result === "win") {
+function genTargetScore() {
+    targetScore = Math.floor(Math.random() * 15 + 16);
+    targetScoreDOM.text(targetScore);
+}
+
+function winOrLose() {
+    if (currentScore == targetScore) {
         wins++;
         winsDOM.text(wins);
-        messageText.text("You win!");
-        messageBox.addClass("message-box-active");
         gameInit();
-    } else if (result === "loss") {
+    } else if (currentScore > targetScore) {
         losses++
         losssesDOM.text(losses);
-        messageText.html("You lose!");
-        messageBox.addClass("message-box-active");
         gameInit();
     }
 }
 
-function click(id, val) {
-    $(id).on("click", function () {
-
-        currentScore += val;
-        userScoreDOM.text(currentScore);
-
-        // console.log("ID: " + id + ". Val: " + val + ".");
-
-        if (currentScore == targetScore) {
-            winOrLoss("win");
-        } else if (currentScore > targetScore) {
-            winOrLoss("loss");
-        }
-    });
-}
-
-function resetUserScore() {
-    userScoreDOM.text("0");
-    console.log("score is reset");
-    currentScore = 0;
-}
-
 function gameInit() {
-    // Put code here that sets up the game from the start
-    // Assign a random number to the target score and push to DOM
-    targetScore = (randNumScore());  // Scoring value
-    targetScoreDOM.text(targetScore);  // Pass that value to the DOM
+    currentScore = 0;
+    userScoreDOM.text(currentScore);
 
-    // Assign a unique random number to each crystal value
-    redVal = randNumCrystal();
-    greenVal = randNumCrystal();
+    genTargetScore();
 
-    // Run function for button click events
-    click("#btn-green", greenVal);
-    click("#btn-red", redVal);
+    genEggVals();
+    // console.log("Egg 1 = " + firstVal);
+    // console.log("Egg 2 = " + secondVal);
+    // console.log("Egg 3 = " + thirdVal);
+    // console.log("Egg 4 = " + fourthVal);
+}
 
-    // Reset user score
-    resetUserScore();
-};
+// ------------------------- //
+// CLICK EVENT HANDLERS 
+// ------------------------- //
+
+$("#btn-one").on("click", function () {
+    console.log(firstVal);
+
+    currentScore += firstVal;
+    userScoreDOM.text(currentScore);
+    winOrLose();
+    userScoreDOM.css("color", "#df6209");
+});
+
+$("#btn-two").on("click", function () {
+    console.log(secondVal);
+
+    currentScore += secondVal;
+    userScoreDOM.text(currentScore);
+    winOrLose();
+    userScoreDOM.css("color", "#c2a800");
+
+});
+
+$("#btn-three").on("click", function () {
+    console.log(thirdVal);
+
+    currentScore += thirdVal;
+    userScoreDOM.text(currentScore);
+    winOrLose();
+    userScoreDOM.css("color", "#5d9094");
+
+});
+
+$("#btn-four").on("click", function () {
+    console.log(fourthVal);
+
+    currentScore += fourthVal;
+    userScoreDOM.text(currentScore);
+    winOrLose();
+    userScoreDOM.css("color", "#8ca85c");
+
+});
 
 
 gameInit();
+
+
+
+
+
+
+
 
