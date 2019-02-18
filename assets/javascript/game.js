@@ -44,7 +44,7 @@ function winOrLoss(result) {
 
 function click(id, val) {
     $(id).on("click", function () {
-        
+
         currentScore += val;
         userScoreDOM.text(currentScore);
 
@@ -65,28 +65,21 @@ function resetUserScore() {
 
 function gameInit() {
     // Put code here that sets up the game from the start
-    document.onkeydown = function (e) {
-        keypress = e.key;
+        // Assign a random number to the target score and push to DOM
+        targetScore = (randNumScore());  // Scoring value
+        targetScoreDOM.text(targetScore);  // Pass that value to the DOM
 
-        // Only run when enter is hit
-        if (keypress == "Enter") {
-            // Assign a random number to the target score and push to DOM
-            targetScore = (randNumScore());  // Scoring value
-            targetScoreDOM.text(targetScore);  // Pass that value to the DOM
+        // Assign a unique random number to each crystal value
+        redVal = randNumCrystal();
+        greenVal = randNumCrystal();
 
-            // Assign a unique random number to each crystal value
-            redVal = randNumCrystal();
-            greenVal = randNumCrystal();
+        // Run function for button click events
+        click("#btn-green", greenVal);
+        click("#btn-red", redVal);
 
-            // Run function for button click events
-            click("#btn-green", greenVal);
-            click("#btn-red", redVal);
-
-            // Reset user score
-            resetUserScore();
-        }
-    };
-}
+        // Reset user score
+        resetUserScore();
+};
 
 
 gameInit();
