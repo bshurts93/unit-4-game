@@ -55,12 +55,10 @@ function gameInit() {
     genTargetScore();
 
     genEggVals();
-
-
-    console.log("Egg 1 = " + firstVal);
-    console.log("Egg 2 = " + secondVal);
-    console.log("Egg 3 = " + thirdVal);
-    console.log("Egg 4 = " + fourthVal);
+    // console.log("Egg 1 = " + firstVal);
+    // console.log("Egg 2 = " + secondVal);
+    // console.log("Egg 3 = " + thirdVal);
+    // console.log("Egg 4 = " + fourthVal);
 }
 
 // ------------------------- //
@@ -73,6 +71,7 @@ $("#btn-one").on("click", function () {
     currentScore += firstVal;
     userScoreDOM.text(currentScore);
     winOrLose();
+    userScoreDOM.css("color", "#df6209");
 });
 
 $("#btn-two").on("click", function () {
@@ -81,6 +80,8 @@ $("#btn-two").on("click", function () {
     currentScore += secondVal;
     userScoreDOM.text(currentScore);
     winOrLose();
+    userScoreDOM.css("color", "#c2a800");
+
 });
 
 $("#btn-three").on("click", function () {
@@ -89,6 +90,8 @@ $("#btn-three").on("click", function () {
     currentScore += thirdVal;
     userScoreDOM.text(currentScore);
     winOrLose();
+    userScoreDOM.css("color", "#5d9094");
+
 });
 
 $("#btn-four").on("click", function () {
@@ -97,6 +100,8 @@ $("#btn-four").on("click", function () {
     currentScore += fourthVal;
     userScoreDOM.text(currentScore);
     winOrLose();
+    userScoreDOM.css("color", "#8ca85c");
+
 });
 
 
