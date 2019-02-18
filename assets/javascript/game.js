@@ -82,8 +82,6 @@ function gameInit() {
     click("#btn-green", greenVal);
     click("#btn-red", redVal);
 
-    
-
     // Reset user score
     resetUserScore();
 };
