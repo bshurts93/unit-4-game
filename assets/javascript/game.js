@@ -44,10 +44,11 @@ function winOrLoss(result) {
 
 function click(id, val) {
     $(id).on("click", function () {
+        
         currentScore += val;
         userScoreDOM.text(currentScore);
 
-        console.log("ID: " + id + ". Val: " + val + ".");
+        // console.log("ID: " + id + ". Val: " + val + ".");
 
         if (currentScore == targetScore) {
             winOrLoss("win");
@@ -89,3 +90,4 @@ function gameInit() {
 
 
 gameInit();
+
