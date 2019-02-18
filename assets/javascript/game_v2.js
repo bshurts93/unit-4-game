@@ -26,11 +26,24 @@ var messageText = $(".message");
 function genCrystalVals() {
     redVal = Math.floor(Math.random() * 5 + 2); // Gets a random number between 2 and 6
     greenVal = Math.floor(Math.random() * 5 + 2); // Gets a random number between 2 and 6
+    return redVal, greenVal;
 }
 
 function genTargetScore() {
     targetScore = Math.floor(Math.random() * 15 + 16);
     targetScoreDOM.text(targetScore);
+}
+
+function winOrLose(result) {
+    if (result == "win") {
+        wins++;
+        winsDOM.text(wins);
+        gameInit();
+    } else if (result == "lose") {
+        losses++
+        losssesDOM.text(losses);
+        gameInit();
+    }
 }
 
 function gameInit() {
@@ -46,49 +59,59 @@ function gameInit() {
     console.log("greenVal = " + greenVal);
 }
 
+// function clicks(id, val) {
+//     $(id).on("click", function () {
+//         console.log(val);
 
+//         currentScore += val;
+//         userScoreDOM.text(currentScore);
 
+//         if (currentScore == targetScore) {
+//             winOrLose("win");
+//             genCrystalVals();
+//         } else if (currentScore > targetScore) {
+//             winOrLose("lose");
+//             genCrystalVals();
+//         }
+//     });
+// }
 
-// ------------------------- //
-// CLICKS
-// ------------------------- //
+$("#btn-red").on("click", function () {
+    console.log(redVal);
 
-
-$("#btn-red").on("click", function(){
     currentScore += redVal;
     userScoreDOM.text(currentScore);
 
-
     if (currentScore == targetScore) {
-        wins++;
-        winsDOM.text(wins);
-        gameInit();
+        winOrLose("win");
     } else if (currentScore > targetScore) {
-        losses++;
-        losssesDOM.text(losses);
-        gameInit();
+        winOrLose("lose");
     }
 });
 
-$("#btn-green").on("click", function(){
+$("#btn-green").on("click", function () {
+    console.log(greenVal);
+
     currentScore += greenVal;
     userScoreDOM.text(currentScore);
 
     if (currentScore == targetScore) {
-        wins++;
-        winsDOM.text(wins);
-        gameInit();
+        winOrLose("win");
     } else if (currentScore > targetScore) {
-        losses++;
-        losssesDOM.text(losses);
-        gameInit();
+        winOrLose("lose");
     }
 });
 
 
-
-
-
-
 gameInit();
+
+// clicks("#btn-red", redVal);
+// clicks("#btn-green", greenVal);
+
+
+
+
+
+
+
 
