@@ -1,28 +1,51 @@
 /* GLOBAL */
+* { color: rgb(9, 58, 122); font-family: 'Bungee', cursive; }
 
-.heading { margin-bottom: 2rem; }
+body {
+    background-image: url("https://images.unsplash.com/photo-1534030665069-90e016e995e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.heading-primary {
+    font-family: 'Pacifico', cursive; 
+    letter-spacing: 4px;
+    font-size: 4.4rem;
+}
+
+.heading-secondary { margin-bottom: 2rem; }
+
+span { font-size: 2.5rem; padding-left: 1rem; }
+
+p { font-family: 'Pacifico', cursive; font-size: 2rem; letter-spacing: 2px; }
 
 
 /* BOOTSTRAP CLASSES */
-.container-fluid {
-    padding: 0;
+
+hr { border-color: rgb(9, 58, 122); }
+
+.jumbotron { 
+    background-color: rgba(204, 204, 204, 0.651); 
+    width: 80%; 
+    margin: 0 auto; 
+    margin-bottom: 80px; 
 }
 
-hr {
-    border-color: rgb(175, 171, 171);
-}
 
+/* TOP JUMBOTRON */
+.top-jumbo { margin: 40px 0 -10px 0; }
+.top-jumbo .jumbotron { padding: 2rem 3rem; }
 
 /* SCORING */
 
 .record-box,
-.user-score,
-.message-box {
-    border: outset 6px gray;
+.user-score {
+    border: outset 6px rgb(136, 176, 250);
     border-radius: 5px;
     width: 45%;
     margin: 1rem auto;
-    background-color: aliceblue;
+    background-color: rgba(170, 215, 253, 0.918);
     padding: 1rem 1.5rem;
     transition: all .8s;
 }
@@ -30,20 +53,34 @@ hr {
 .message-box { opacity: 0; }
 .message-box-active { opacity: 1; }
 
+.record-block { display: inline-block; margin: 0 2rem; }
 
+#wins { color: #8eba43; }
+#losses { color: #cf371c; }
+#user-score { color: #4b7477; }
+#target-score { color: #df6209; }
 
-.record-block {
-    display: inline-block;
-    margin: 0 2rem;
-}
+/* INSTRUCTIONS */
+.instructions { margin-top: 70px; }
 
 /* IMAGES */
-img {
-    height: 150px;
-}
 
-.crystal {
-    display: inline-block;
-    padding: 0 3rem;
-}
+#btn-one .egg-top { fill: #f3924d; transition: fill .4s; }
+#btn-one .egg-bottom { fill: #d1691f; transition: fill .4s; }
+#btn-one:hover .egg-top { fill: #df6209; }
+#btn-one:hover .egg-bottom { fill: #9c4201; }
 
+#btn-two .egg-top { fill: #e0c826; transition: fill .4s; }
+#btn-two .egg-bottom { fill: #c4ad1d; transition: fill .4s; }
+#btn-two:hover .egg-top { fill: #c2a800; }
+#btn-two:hover .egg-bottom { fill: #a08b00; }
+
+#btn-three .egg-top { fill: #7fc4c9; transition: fill .4s; }
+#btn-three .egg-bottom { fill: #4b7477; transition: fill .4s; }
+#btn-three:hover .egg-top { fill: #5d9094; }
+#btn-three:hover .egg-bottom { fill: #305255; }
+
+#btn-four .egg-top { fill: #add36c; transition: fill .4s; }
+#btn-four .egg-bottom { fill: #8eba43; transition: fill .4s; }
+#btn-four:hover .egg-top { fill: #8ca85c; }
+#btn-four:hover .egg-bottom { fill: #5d7a2f; }

@@ -8,58 +8,87 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Pacifico" rel="stylesheet">
 </head>
 
 <body>
 
 
-    <div class="container-fluid text-center">
-        <div class="jumbotron">
-            <h1>Crystal Collector Game</h1>
-        </div>
+    <div class="container-fluid text-center top-jumbo">
+        <h1 class="heading-primary">Eggcellent Counting</h1>
     </div>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="jumbotron instructions-jumbo">
-                    <h2 class="text-center heading">Instructions</h2>
-                    <hr width="20%">
-                    <p class="instructions-p">You will be given a random number at the beginning of the game.</p>
-                    <p class="instructions-p">There are four crystals below, each with a hidden value.</p>
-                    <p class="instructions-p">When you click a crystal, its value will be added to your total score.</p>
-                    <p class="instructions-p">If you match your score to the given number, you win! If you go above, you
-                        lose.</p>
+            <div class="jumbotron text-center">
+                <div class="number-box">
+                    <h2 class="heading-secondary">Number to hit: <span id="target-score"></span></h2>
                 </div>
-            </div>
 
-            <div class="col-md-8">
-                <div class="jumbotron text-center">
-                    <div class="number-box">
-                        <h2 class="heading">Number to hit: <span id="target-score"></span></h2>
-                    </div>
-
-                    <div class="record-box">
-                        <h2 class="record-block">Wins: <span id="wins">0</span></h2>
-                        <h2 class="record-block">Losses: <span id="losses">0</span></h2>
-                    </div>
-
-                    <div class="message-box">
-                        <h2 class="message"></h2>
-                    </div>
-
-                    <div class="score-box">
-                        <h2 class="user-score">Current Score: <span id="user-score">0</span></h2>
-                    </div>
-
-                    <div class="crystal-box">
-                        <img src="assets/images/gem-red.png" alt="red crystal" id="btn-red" class="crystal">
-                        <img src="assets/images/gem-green.png" alt="green crystal" id="btn-green" class="crystal">
-                    </div>
+                <div class="record-box">
+                    <h2 class="record-block">Wins: <span id="wins">0</span></h2>
+                    <h2 class="record-block">Losses: <span id="losses">0</span></h2>
                 </div>
-            </div>
-        </div>
+
+                <div class="score-box">
+                    <h2 class="user-score">Current Score: <span id="user-score">0</span></h2>
+                </div>
+
+                <div class="egg-box">
+                    <svg id="btn-one" width="300px" height="300px" viewBox="-13 -10 50 50" version="1.1" id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="23.131px" height="32px" viewBox="0 0 23.131 32" enable-background="new 0 0 23.131 32"
+                        xml:space="preserve">
+                        <path class="egg-top" d="M5.537,11.158c0,0,3.105-3.053,3.674-3.053s2.354,3.156,2.354,3.156s2.665-3.311,3.338-3.311c0.672,0,2.742,3.26,2.742,3.26
+        l3.291-2.517C19.022,4.227,15.856,0,11.469,0c-3.812,0-6.705,3.395-8.63,7.345L5.537,11.158z" />
+                        <path class="egg-bottom"
+                            d="M17.646,12.607c-0.567,0-2.742-3.105-2.742-3.105s-2.793,3.105-3.336,3.105c-0.544,0-2.407-3.052-2.407-3.052
+        s-3.157,3.053-3.829,3.053c-0.414,0-1.944-2.271-3.061-4.021C0.767,12.101,0,15.811,0,17.846C0,22.32,3.071,32,11.45,32
+        c9.248,0,11.681-9.757,11.681-14.449c0-1.721-0.589-4.728-1.753-7.771C19.823,11.096,17.967,12.607,17.646,12.607z" />
+                    </svg>
+                    <svg id="btn-two" width="300px" height="300px" viewBox="-13 -10 50 50" version="1.1" id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="23.131px" height="32px" viewBox="0 0 23.131 32" enable-background="new 0 0 23.131 32"
+                        xml:space="preserve">
+                        <path class="egg-top" d="M5.537,11.158c0,0,3.105-3.053,3.674-3.053s2.354,3.156,2.354,3.156s2.665-3.311,3.338-3.311c0.672,0,2.742,3.26,2.742,3.26
+    l3.291-2.517C19.022,4.227,15.856,0,11.469,0c-3.812,0-6.705,3.395-8.63,7.345L5.537,11.158z" />
+                        <path class="egg-bottom" d="M17.646,12.607c-0.567,0-2.742-3.105-2.742-3.105s-2.793,3.105-3.336,3.105c-0.544,0-2.407-3.052-2.407-3.052
+    s-3.157,3.053-3.829,3.053c-0.414,0-1.944-2.271-3.061-4.021C0.767,12.101,0,15.811,0,17.846C0,22.32,3.071,32,11.45,32
+    c9.248,0,11.681-9.757,11.681-14.449c0-1.721-0.589-4.728-1.753-7.771C19.823,11.096,17.967,12.607,17.646,12.607z" />
+                    </svg>
+                    <svg id="btn-three" width="300px" height="300px" viewBox="-13 -10 50 50" version="1.1" id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="23.131px" height="32px" viewBox="0 0 23.131 32" enable-background="new 0 0 23.131 32"
+                        xml:space="preserve">
+                        <path class="egg-top" d="M5.537,11.158c0,0,3.105-3.053,3.674-3.053s2.354,3.156,2.354,3.156s2.665-3.311,3.338-3.311c0.672,0,2.742,3.26,2.742,3.26
+    l3.291-2.517C19.022,4.227,15.856,0,11.469,0c-3.812,0-6.705,3.395-8.63,7.345L5.537,11.158z" />
+                        <path class="egg-bottom" d="M17.646,12.607c-0.567,0-2.742-3.105-2.742-3.105s-2.793,3.105-3.336,3.105c-0.544,0-2.407-3.052-2.407-3.052
+    s-3.157,3.053-3.829,3.053c-0.414,0-1.944-2.271-3.061-4.021C0.767,12.101,0,15.811,0,17.846C0,22.32,3.071,32,11.45,32
+    c9.248,0,11.681-9.757,11.681-14.449c0-1.721-0.589-4.728-1.753-7.771C19.823,11.096,17.967,12.607,17.646,12.607z" />
+                    </svg>
+                    <svg id="btn-four" width="300px" height="300px" viewBox="-13 -10 50 50" version="1.1" id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="23.131px" height="32px" viewBox="0 0 23.131 32" enable-background="new 0 0 23.131 32"
+                        xml:space="preserve">
+                        <path class="egg-top" d="M5.537,11.158c0,0,3.105-3.053,3.674-3.053s2.354,3.156,2.354,3.156s2.665-3.311,3.338-3.311c0.672,0,2.742,3.26,2.742,3.26
+    l3.291-2.517C19.022,4.227,15.856,0,11.469,0c-3.812,0-6.705,3.395-8.63,7.345L5.537,11.158z" />
+                        <path class="egg-bottom" d="M17.646,12.607c-0.567,0-2.742-3.105-2.742-3.105s-2.793,3.105-3.336,3.105c-0.544,0-2.407-3.052-2.407-3.052
+    s-3.157,3.053-3.829,3.053c-0.414,0-1.944-2.271-3.061-4.021C0.767,12.101,0,15.811,0,17.846C0,22.32,3.071,32,11.45,32
+    c9.248,0,11.681-9.757,11.681-14.449c0-1.721-0.589-4.728-1.753-7.771C19.823,11.096,17.967,12.607,17.646,12.607z" />
+                    </svg>
+                </div>
+
+                <h2 class="text-center heading-secondary instructions">Instructions</h2>
+                <hr width="20%">
+                <p class="text-center">You will be given a random number at the beginning of the game.</p>
+                <p class="text-center">There are four crystals below, each with a hidden value.</p>
+                <p class="text-center">When you click a crystal, its value will be added to your total score.</p>
+                <p class="text-center">If you match your score to the given number, you win! If you go above, you
+                    lose.</p>
+            </div> -->
     </div>
+
 
 
 
