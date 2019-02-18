@@ -39,11 +39,14 @@ hr {
 /* IMAGES */
 
 
-#btn-red .egg-top { fill: rgb(223, 73, 73); }
-#btn-red .egg-bottom { fill: rgb(180, 21, 0); }
+#btn-one .egg-top { fill: rgb(223, 73, 73); }
+#btn-one .egg-bottom { fill: rgb(180, 21, 0); }
 
-#btn-green .egg-top { fill: rgb(28, 151, 28); }
-#btn-green .egg-bottom { fill: rgb(23, 83, 28); }
+#btn-two .egg-top { fill: rgb(28, 151, 28); }
+#btn-two .egg-bottom { fill: rgb(23, 83, 28); }
 
-#btn-blue .egg-top { fill: rgb(105, 97, 224); }
-#btn-blue .egg-bottom { fill: rgb(28, 53, 165); }
+#btn-three .egg-top { fill: rgb(105, 97, 224); }
+#btn-three .egg-bottom { fill: rgb(28, 53, 165); }
+
+#btn-four .egg-top { fill: rgb(224, 154, 97); }
+#btn-four .egg-bottom { fill: rgb(165, 106, 28); }

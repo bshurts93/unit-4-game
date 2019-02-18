@@ -25,9 +25,10 @@ var messageText = $(".message");
 // ------------------------- //
 
 function genEggVals() {
-    redVal = Math.floor(Math.random() * 5 + 2); // Gets a random number between 2 and 6
-    greenVal = Math.floor(Math.random() * 5 + 2); // Gets a random number between 2 and 6
-    return redVal, greenVal;
+    firstVal = Math.floor(Math.random() * 5 + 2);
+    secondVal = Math.floor(Math.random() * 5 + 2);
+    thirdVal = Math.floor(Math.random() * 5 + 2);
+    fourthVal = Math.floor(Math.random() * 5 + 2);
 }
 
 function genTargetScore() {
@@ -36,16 +37,6 @@ function genTargetScore() {
 }
 
 function winOrLose() {
-    // if (result == "win") {
-    //     wins++;
-    //     winsDOM.text(wins);
-    //     gameInit();
-    // } else if (result == "lose") {
-    //     losses++
-    //     losssesDOM.text(losses);
-    //     gameInit();
-    // }
-
     if (currentScore == targetScore) {
         wins++;
         winsDOM.text(wins);
@@ -66,53 +57,46 @@ function gameInit() {
     genEggVals();
 
 
-    console.log("redVal = " + redVal);
-    console.log("greenVal = " + greenVal);
+    console.log("Egg 1 = " + firstVal);
+    console.log("Egg 2 = " + secondVal);
+    console.log("Egg 3 = " + thirdVal);
+    console.log("Egg 4 = " + fourthVal);
 }
 
 // ------------------------- //
 // CLICK EVENT HANDLERS 
 // ------------------------- //
 
-$("#btn-red").on("click", function () {
-    console.log(redVal);
+$("#btn-one").on("click", function () {
+    console.log(firstVal);
 
-    currentScore += redVal;
+    currentScore += firstVal;
     userScoreDOM.text(currentScore);
-
-    // if (currentScore == targetScore) {
-    //     winOrLose("win");
-    // } else if (currentScore > targetScore) {
-    //     winOrLose("lose");
-    // }
-
     winOrLose();
 });
 
-$("#btn-green").on("click", function () {
-    console.log(greenVal);
+$("#btn-two").on("click", function () {
+    console.log(secondVal);
 
-    currentScore += greenVal;
+    currentScore += secondVal;
     userScoreDOM.text(currentScore);
-
-    if (currentScore == targetScore) {
-        winOrLose("win");
-    } else if (currentScore > targetScore) {
-        winOrLose("lose");
-    }
+    winOrLose();
 });
 
-$("#btn-blue").on("click", function () {
-    console.log(greenVal);
+$("#btn-three").on("click", function () {
+    console.log(thirdVal);
 
-    currentScore += greenVal;
+    currentScore += thirdVal;
     userScoreDOM.text(currentScore);
+    winOrLose();
+});
 
-    if (currentScore == targetScore) {
-        winOrLose("win");
-    } else if (currentScore > targetScore) {
-        winOrLose("lose");
-    }
+$("#btn-four").on("click", function () {
+    console.log(fourthVal);
+
+    currentScore += fourthVal;
+    userScoreDOM.text(currentScore);
+    winOrLose();
 });
 
 
