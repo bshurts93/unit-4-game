@@ -16,8 +16,7 @@ hr {
 /* SCORING */
 
 .record-box,
-.user-score,
-.message-box {
+.user-score {
     border: outset 6px gray;
     border-radius: 5px;
     width: 45%;
@@ -38,12 +37,13 @@ hr {
 }
 
 /* IMAGES */
-img {
-    height: 150px;
-}
 
-.crystal {
-    display: inline-block;
-    padding: 0 3rem;
-}
 
+#btn-red .egg-top { fill: rgb(223, 73, 73); }
+#btn-red .egg-bottom { fill: rgb(180, 21, 0); }
+
+#btn-green .egg-top { fill: rgb(28, 151, 28); }
+#btn-green .egg-bottom { fill: rgb(23, 83, 28); }
+
+#btn-blue .egg-top { fill: rgb(105, 97, 224); }
+#btn-blue .egg-bottom { fill: rgb(28, 53, 165); }
